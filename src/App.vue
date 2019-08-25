@@ -26,6 +26,24 @@ ul li{
   font-style: normal;
 }
 body{
-  font-size:16px;
+  font-size:14px;
+}
+img{
+    vertical-align: middle;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.clearfix:after{
+  content: "";
+  height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+  zoom: 1;
+}
+p{
+  margin:0 0 10px;
 }
 </style>

@@ -47,6 +47,7 @@ export default {
   align-items: center;
   border-top: 0.01rem solid gainsboro;
   height:1rem;
+  background: #ffffff;
   >div{
     flex: 1;
     text-align:center;
