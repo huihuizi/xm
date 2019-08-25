@@ -25,7 +25,30 @@
                 <!-- </router-link> -->
             </div>
             <div class="pay-icon">
-
+                <div>
+                    <!-- <router-link to="/mineshop/paying"> -->
+                        <img src="../../assets/image/a.jpg" alt />
+                        <p style="color:black">待付款</p>
+                    <!-- </router-link> -->
+                </div>
+                <div>
+                    <!-- <router-link to="/mineshop/sending"> -->
+                        <img src="../../assets/image/b.jpg" alt />
+                        <p style="color:black">待发货</p>
+                    <!-- </router-link> -->
+                    </div>
+                    <div>
+                    <!-- <router-link to="/mineshop/harvesting"> -->
+                        <img src="../../assets/image/c.jpg" alt />
+                        <p style="color:black">待收货</p>
+                    <!-- </router-link> -->
+                    </div>
+                    <div>
+                    <!-- <router-link to="/mineshop/assessing"> -->
+                        <img src="../../assets/image/d.jpg" alt />
+                        <p style="color:black">待评价</p>
+                    <!-- </router-link> -->
+                </div>
             </div>
         </div>
         <footersd></footersd>
@@ -119,6 +142,19 @@ export default {
             width: 100%;
             display: flex;
             border-bottom: 0.15rem solid #F5F5F5;
+            div{
+                width: 25%;
+                text-align: center;
+                margin-top: 0.1rem;
+                img{
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+                p {
+                    margin-top: 0.1rem;
+                    font-size: 0.25rem;
+                }
+            }
         }
     }
 }
