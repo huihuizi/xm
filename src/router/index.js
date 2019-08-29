@@ -14,9 +14,13 @@ let Colimn = () => import('@/components/home/icons/Colimn')
 // home的详情
 let Sortxq = () => import('@/components/home/sorts/Sortxq')
 let Peoplexq = () => import('@/components/home/Peopleqi/Peoplexq')
-
 // 分类详情
-// let Itemizexq = () => import('@/components/itemize/Itemizexq')
+let Itemizexq = () => import('@/components/itemize/Itemizexq')
+// 购物车
+let Carxq = () => import('@/components/car/Carxq')
+// mine 中的收藏
+let Shouc = () => import('@/components/mine/Shouceng')
+
 Vue.use(Router)
 
 export default new Router({
@@ -75,5 +79,20 @@ export default new Router({
       name: 'Peoplexq',
       component: Peoplexq
     },
+    {   // 分类详情
+      path: '/Itemize/Itemizexq/:id',
+      name: 'Itemizexq',
+      component: Itemizexq
+    },
+    {   // 购物车详情
+      path: '/car/carxq/:id',
+      name: 'Carxq',
+      component: Carxq
+    },
+    {   // 收藏
+       path: '/mine/shouc',
+       name: 'Shouc',
+       component: Shouc
+     },
   ]
 })

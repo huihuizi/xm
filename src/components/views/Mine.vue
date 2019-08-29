@@ -11,7 +11,7 @@
                     <img src="../../assets/image/x.jpg" alt />
                     <span>新上线更稳定的付费快递查询接口</span>
                 </p>
-            </div>
+            </div> 
             <!-- 我的订单 -->
             <div class="my-pay">
                 <!-- <router-link to="/mineshop"> -->
@@ -48,6 +48,40 @@
                         <img src="../../assets/image/d.jpg" alt />
                         <p style="color:black">待评价</p>
                     <!-- </router-link> -->
+                </div>
+            </div>
+            <!-- 六个方块 -->
+            <div class="pay-icons">
+                <div>
+                    <img src="../../assets/image/aa.jpg" alt />
+                    <p>我的余额</p>
+                </div>
+                <div>
+                    <img src="../../assets/image/f.jpg" alt />
+                    <p>我的砍价</p>
+                </div>
+                <div>
+                <!-- <router-link to="/gift"> -->
+                    <img src="../../assets/image/g.jpg" alt />
+                    <p style="color:black">我的礼券</p>
+                <!-- </router-link> -->
+                </div>
+                <!-- <div style="position:relative;"> -->
+                <router-link to="/mine/shouc" tag="div" style="position:relative">
+                    <img src="../../assets/image/h.jpg" alt />
+                    <p>我的收藏</p>
+                    <span class="bians">{{this.$store.state.shouc}}</span>
+                </router-link>
+               <!-- </div> -->
+               <div>
+                <!-- <router-link to="/address" tag="div"> -->
+                    <img src="../../assets/image/i.jpg" alt />
+                    <p>我的地址</p>
+                <!-- </router-link> -->
+                </div>
+                <div>
+                    <img src="../../assets/image/o.jpg" alt />
+                    <p>联系客服</p>
                 </div>
             </div>
         </div>
@@ -156,6 +190,38 @@ export default {
                 }
             }
         }
+        .pay-icons{
+            width: 100%;
+            height: 3.5rem;
+            background: white;
+            div{
+                margin-top: 0.5rem;
+                float: left;
+                width: 33%;
+                text-align: center;
+                img{
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+                p{
+                    margin-top: 0.1rem;
+                    font-size: 0.25rem;
+                }
+            }
+        }
     }
+    .bians{
+        display: block;
+        width: 0.4rem;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        border-radius: 50%;
+        background: red;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: -0.2rem;
+        left: 1.4rem;
+  }
 }
 </style>

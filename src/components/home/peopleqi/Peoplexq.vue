@@ -20,38 +20,20 @@
             <div v-html="arr.content" class="imgss" id="imgss"></div>
         </ul>
     </div>
-    <div class="bottoms">
-      <!-- 客服 -->
-      <div class="kefu">
-        <img src="../../../assets/image/kefu.jpg" alt />
-      </div>
-      <!-- 购物车 -->
-      <div class="gouwu">
-        <router-link to="/cart">
-        <img src="../../../assets/image/g.jpg" alt />
-        </router-link>
-      </div>
-      <!-- <span class="bian">{{allcount}}</span> -->
-      <!-- 收藏 -->
-      <div class="shou">
-        <img src="../../../assets/image/shou.jpg" alt />
-      </div>
-      <div class="goumai">
-        <p>立即购买</p>
-      </div>
-      <div class="che">
-        <p>加入购物车</p>
-      </div>
-    </div>
+    <xqfooter :arrs="arr"></xqfooter>
   </div>
 </template>
 <script>
 import request from "@/request/request"
 import Fanhui from "@/components/public/fanhui"
+import Xqfooter from "@/components/public/Xqfooter"
+// 弹出框
+import { Toast } from 'vant';
 export default {
   name: "peoplexq",
   components:{
-    Fanhui  
+    Fanhui,
+    Xqfooter  
   },
   data(){
       return{
@@ -73,6 +55,19 @@ export default {
             // console.log(this.arr.basicInfo.name)
         })
     },
+  methods:{
+    // shouceng(){
+    //   Toast.success('收藏成功');
+    //   // console.log(1)
+    //   let obj= {
+    //     id:this.arr.basicInfo.id,
+    //     name:this.arr.basicInfo.name,
+    //     pic:this.arr.basicInfo.pic,
+    //   }
+    //   console.log(obj)
+    //   this.$store.commit("shouceng",obj)
+    // }
+  }
 };
 </script>
 <style scoped lang="less">
@@ -92,8 +87,8 @@ export default {
     flex-direction: column;
     position: relative;
     .fan1{
-        position: relative;
-        position: absolute;
+        // position: relative;
+        position: fixed;
         z-index: 10;
         top: 0.2rem;
         left: 0.2rem;

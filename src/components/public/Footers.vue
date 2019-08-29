@@ -20,21 +20,24 @@
         <router-link to="/car" tag="div">
           <div class="icon"><font-awesome-icon :icon="['fas','shopping-cart']"></font-awesome-icon></div>
           <span>购物车</span>
-          <span class="bian">0</span>
+          <span class="bian">{{this.$store.state.cont}}</span>
         </router-link>
       </div>
       <div>
         <router-link to="/mine" tag="div">
           <div class="icon"><font-awesome-icon :icon="['fas','user']"></font-awesome-icon></div>
           <span>个人</span>
-          <span class="bians">0</span>
+          <span class="bians">{{this.$store.state.shouc}}</span>
         </router-link>
       </div>
     </div>
 </template>
 <script>
 export default {
-    name:"footers"
+    name:"footers",
+     created() {
+        // console.log(this.cont)
+    },
 }
 </script>
 <style lang="less" scoped>

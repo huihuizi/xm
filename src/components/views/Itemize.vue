@@ -5,7 +5,7 @@
             <input type="text" placeholder="搜索商品">
         </div>
         <div class="bg"></div>
-         <div class="left">
+        <div class="left">
             <ul>
                 <li @click="fenlei('all')" :class="{li_active: val == 'all' }" >所有分类</li>
                 <li @click="fenlei('15114')" :class="{li_active: val == '15114' }" >居家生活</li>
@@ -13,7 +13,7 @@
                 <li @click="fenlei('15116')" :class="{li_active: val == '15116' }" >新品服饰</li>
             </ul>
         </div>
-        <scroll>
+        <!-- <scroll> -->
             <div class="right">
                 <div class="lunbo">
                     <van-swipe :autoplay="3000" indicator-color="white" class="slide">
@@ -26,7 +26,7 @@
                     </van-swipe>
                 </div>
                 <div class="iconss">
-                    <div v-for="(item,index) in arr" :key="index" v-show="item.pid==val||val=='all'">
+                    <div v-for="(item,index) in arr" :key="index" v-show="item.pid==val||val=='all'" @click="itemxq(item.id)">
                         <!-- <router-link :to="'/itemize/itemizexq'" > -->
                         <a href="javascript:;">
                             <p><img :src="item.icon"></p>
@@ -36,14 +36,13 @@
                     </div>
                 </div>
             </div>
-        </scroll>
+        <!-- </scroll> -->
         <footersd></footersd>
     </div>
 </template>
 <script>
 import request from "../../request/request"
 import Footersd from "@/components/public/Footers";
-import Scroll from "@/components/scroll/Scroll";
 export default {
     name:"itemize",
     data(){
@@ -53,8 +52,7 @@ export default {
         }
     },
     components:{
-        Footersd,
-        Scroll
+        Footersd
     },
     
     methods:{
@@ -65,7 +63,6 @@ export default {
         },
         itemxq(id){
             this.$router.push({name:'Itemizexq',params:{id:id}})
-            console.log(22)
         }
     },
     created(){
@@ -82,10 +79,14 @@ export default {
 <style lang="less" scoped>
 .fenlei{
     box-sizing: border-box;
+    position:relative;
+    height:100%;
     .search{
         width: 100%;
-        height: 0.7rem;
-        position: relative;
+        height: 1rem;
+        position: fixed;
+        z-index:2;
+        background: #ffffff;
         .sear{
             position: absolute;
             top: 0.3rem;
@@ -98,7 +99,7 @@ export default {
             border: none;
             background: gainsboro;
             width: 5rem;
-            height: 100%;
+            height:0.7rem;
             padding-left: 0.7rem;
             outline: none;
             margin-left: 0.2rem;
@@ -108,10 +109,17 @@ export default {
         width: 100%;
         height: 0.01rem;
         border: 0.01rem solid gainsboro;
-        margin-top: 0.2rem;
+        // margin-top: 0.2rem;
         box-sizing: border-box;
+        position: fixed;
+        top:1rem;
+        z-index: 2;
     }
     .left{
+        float:left;
+        height:100%;
+        position:fixed;
+        top:1.2rem;
         ul{
             li{
                 line-height: 0.8rem;
@@ -132,6 +140,9 @@ export default {
     .right{
         float: right;
         width:5rem;
+        position: absolute;
+        top:1.2rem;
+        right:0;
         .lunbo{
             width: 5rem;
             height: 1.6rem;

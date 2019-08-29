@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 共同的数据
+import store from "./store/store"
 
 // 引入字体图标库
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -23,5 +25,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
